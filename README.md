@@ -8,4 +8,5 @@ Final project for CPSC 42: Computer Architecture and Organization
   *avr/pgmspace.h
   *avr/eeprom.h
 ------------------------------------------------------------------------
-[Quick and dirty circuit schematic](https://i.imgur.com/exLel7J.png)
+Quick and dirty circuit schematic:
+![alt text](https://i.imgur.com/exLel7J.png "Schematic")
