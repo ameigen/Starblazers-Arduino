@@ -47,7 +47,7 @@ void setup() {
 
 //HOLDS MENU HANDLER -> ALSO HANDS GENERAL SCREEN REFRESH
 void loop() {
-  //playMusic(2,900);
+  playMusic(2,500);
   //MENU SWITCH
   switch(curScreen){
     case titleScreen:
@@ -103,11 +103,12 @@ void updateG(){
   buttonChecks();
   moveState = 1;
   shotCheck();
-  asteroidMove();
+  drawUI();
   if(addScore> 0){
     currentScore += addScore;
     addScore -= addScore;
   }
+  asteroidMove();
   if(playerStatus){
     if(leftIng) {
       playerX -= 6;
@@ -120,7 +121,6 @@ void updateG(){
     if(playerX < 3) playerX = 2;
     if(playerX > 115) playerX = 115;
       }
-   drawUI();
    spawnTimer += 1;
 }
 
@@ -312,11 +312,10 @@ void drawHS(){
 
 //DRAWS THE GAME FRAME
  void drawGame(){
-    int i;
     display.clearDisplay();
     drawUI();
     spawnStars();
-  } 
+ }
 
 //CHECKS FOR BUTTON INPUT
 void buttonChecks(){
@@ -368,10 +367,14 @@ void passiveAnimate(){
 //DRAWS CURRENT SCORE AND LIVES
 void drawUI(){
   int i;
+  int scoreDisplay = 0;
+  scoreDisplay = currentScore;
   if(playerLives > 0 || playerStatus){
     display.drawRect(0,0,128,64,WHITE);
     display.setCursor(3,3);
-    display.print(String("Score:" + String(currentScore, DEC)));
+    display.print(String("Score: "));
+    display.setCursor(40,3);
+    display.print(currentScore);
     for(i=0; i<playerLives; i++){
       display.drawBitmap(128-13-i*10,2,playerForward, 11, 6, INVERSE);
     }
@@ -446,8 +449,6 @@ void drawUI(){
 
 //PUSHES ASTEROID DOWN SCREEN, THEN CHECKS FOR POSSIBLE COLLISION
  void asteroidMove(){
-  if(currentScore>= 1000)asteroidMoveSpeed = currentScore/1000;
-  else asteroidMoveSpeed = 1;
   for(int i = 0; i <= 5; i++){
       enemiesArr[i+6] += asteroidMoveSpeed;
     if((collisionCheckP(playerShotX, playerShotY))){
@@ -458,7 +459,7 @@ void drawUI(){
         shotOut = false;
         playerShotX = -5;
         playerShotY = -5;
-        addScore += 50;
+        addScore += 20;
         for(int i = 0; i <= 17; i++){
          enemiesArr[i] = enemiesArrInit[i];
            }
@@ -474,10 +475,15 @@ void drawUI(){
         }
         else playerLives -= 1;
         spawnTimer = 99;
+        }
       }
-      }
-    }
+      if(currentScore >= 1000){
+    asteroidMoveSpeed = currentScore/1000;
   }
+  else asteroidMoveSpeed = 1;
+  } 
+    }
+  
 
 //CHECKS ASTEROID HOLDER ARRAY FOR CURRENT LOCATION
  void drawAsteroid(){

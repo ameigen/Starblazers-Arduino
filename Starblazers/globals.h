@@ -27,13 +27,13 @@ void pinsSetup() {
 //generalized global variables
 int playerX = 60;
 int playerY = 56;
-unsigned int currentScore = 0;
+unsigned long currentScore = 0;
 unsigned int highScore = 0;
 unsigned int addScore = 0;
 byte playerLives = 3;
 bool playerStatus = true;
-int playerShotX = 0;
-int playerShotY = 0;
+int playerShotX = -5;
+int playerShotY = -5;
 byte curScreen = scoreScreen;
 int menuPosition = 0;
 unsigned int aboutInfo = 0;
@@ -47,6 +47,7 @@ int spawnAbleT = 1;
 unsigned int spawnTY;
 int starStart = 1;
 int starPos[50];
+int starPosMov[50];
 int currentLevel = 1;
 bool shotOut = false;
 int moveState = 1;
@@ -69,3 +70,4 @@ int enemiesArr[] = {
   0,0,0, //6  >15
 };
 int asteroidMoveSpeed = 1;
+unsigned long moveSpeedSet = 0;
