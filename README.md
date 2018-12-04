@@ -2,7 +2,7 @@
 Final project for CPSC 42: Computer Architecture and Organization
 
 ------------------------------------------------------------------------
-
+# MISC
  *Largely inspired by the likes of Galaga and asteroids.
  
  *Makes use of the following libraries:
@@ -19,3 +19,7 @@ Final project for CPSC 42: Computer Architecture and Organization
 
 Quick and dirty circuit schematic:
 ![alt text](https://i.imgur.com/exLel7J.png "Schematic")
+
+
+------------------------------------------------------------------------
+# Parts Used
