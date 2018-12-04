@@ -16,6 +16,7 @@ Final project for CPSC 42: Computer Architecture and Organization
   *avr/eeprom.h
   
 ------------------------------------------------------------------------
+# Schematic
 
 Quick and dirty circuit schematic:
 ![alt text](https://i.imgur.com/exLel7J.png "Schematic")
