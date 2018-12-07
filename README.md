@@ -34,4 +34,4 @@ Quick and dirty circuit schematic:
 ------------------------------------------------------------------------
 # Gameplay Video
 
-![alt text](https://www.youtube.com/watch?v=UdLGfE2sDZY "Gameplay Video")
+https://www.youtube.com/watch?v=UdLGfE2sDZY
