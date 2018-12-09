@@ -26,9 +26,13 @@ Quick and dirty circuit schematic:
 # Parts Used
 
  *Multiple wires
+ 
  *1x piezo speaker
+ 
  *4x 100ohm resistors
+ 
  *3x arduino push buttons
+ 
  *1x OLED 0.96" I2C/SPI Display
  
 ------------------------------------------------------------------------
